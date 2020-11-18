@@ -19,16 +19,32 @@ def crear_datos(data):
 
     data.append( asiento("X1",b,"Chofer"))
     data.append( asiento("X2",b,"Copiloto"))
-    data.append( asiento("X3",b,"Segunda_Fila-Derecha_Ventana"))
+    data.append( asiento("X3",b,"Segunda_Fila-Izquierda_Ventana"))
     data.append( asiento("X4",b,"Segunda_Fila-Centro"))
-    data.append( asiento("X5",b,"Segunda_Fila-Izquierda-Ventana"))
-    data.append( asiento("X6",a,"Tercera_Fila-Derecha"))
-    data.append( asiento("X7",a,"Tercera_Fila-Izquierda"))
+    data.append( asiento("X5",b,"Segunda_Fila-Derecha-Ventana"))
+    data.append( asiento("X6",a,"Tercera_Fila-Izquierda"))
+    data.append( asiento("X7",a,"Tercera_Fila-Derecha"))
+
 
     loopescritura(data)
     
     return data
 
+
+def crear_meta(data):
+    
+    a="Abatido"
+    b="Normal"
+
+    data.append( asiento("X1",b,"Chofer"))
+    data.append( asiento("X2",b,"Copiloto"))
+    data.append( asiento("X3",b,"Segunda_Fila-Izquierda_Ventana"))
+    data.append( asiento("X4",a,"Segunda_Fila-Centro"))
+    data.append( asiento("X5",b,"Segunda_Fila-Derecha-Ventana"))
+    data.append( asiento("X6",b,"Tercera_Fila-Izquierda"))
+    data.append( asiento("X7",b,"Tercera_Fila-Derecha"))
+
+    return data
 
 
 
@@ -38,15 +54,9 @@ def main():
 
     Asientos= []
     Asientos= crear_datos(Asientos)
-
+    Estados_meta=[]
+    Estados_meta=crear_meta(Estados_meta)
     
-
-
-
-
-
-
-
 
 
 

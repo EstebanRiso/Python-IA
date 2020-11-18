@@ -1,5 +1,7 @@
 
 import enum
+import random
+
 
 
 
@@ -62,51 +64,77 @@ class monovolumen:
 # Nucleo
 class Node(object):
 
-	def __init__(self, data ,costo, n = None):
-		self.data = data
-		self.next_node = n
+    def __init__(self,costo,dato,n=None):
+        self.costo=costo
+        self.dato=dato
+        self.next_node=n
 
-	def get_next (self):
-		return self.next_node
+    def get_next (self):
+	    return self.next_node
 
-	def set_next (self, n):
-		self.next_node = n
+    def set_next (self, n):
+     	self.next_node = n
 		
-	def get_data (self):
-		return self.data
+    def get_data (self):
+    	return self.data
 
-	def set_data (self, d):
-		self.data = d
+    def set_data (self, d):
+       self.data = d
 		
-	
-
-
 
 
 #inicializador pdta: hay que crear lo mas potente  .3. 
 class ArbolBinario(object):
 
-    def __init__(self,i=None,d=None):
+    def __init__(self,izquierda=None,derecha=None):
         
-        self.izquierda = i
-        self.derecha   = d
-        self.size      = 0 
+        self.izquierda = izquierda
+        self.derecha   = derecha
+
+    # el dato que sera llamado sera un tipo de dato lista , TENGAN MUCHO CUIDADO DE COLOCAR UN INTEGER/CHAR PORQUE LES DARA ERROR
+    def add(self,dato):
+
+        x1=0
+        x2=1
+        x3=2
+        x4=3
+        x5=4
+        x6=5
+        x7=6
+
+        if self.izquierda == None :
+
+          xi=random.randint(1,7)
+          
+          if xi == 2 and  dato[xi].estado=="Normal" and dato[x4].estado == "Abatido" and dato[x5].estado == "Abatido":
+
+                valorcosto=dato[xi].setcosto("Desplazado")
+                self.izquierda= Node(valorcosto,dato)   
+
+
+        elif self.derecha == None :
+
+            xi=random.randint(1,7)
+          
+            if xi == 2 and dato[x4].estado == "Abatido" and dato[x5].estado == "Abatido":
+
+                valorcosto=dato[xi].setcosto("Abatido")
+                self.derecha= Node(valorcosto,dato)
+
+
+
+        
+        
 
     
 
+      
 
-
-    
-        
-
-
-
-
-
+            
+            
 
 # Pueden Modificar Para que solo imprima el asiento pero si o si tiene que imprimir para el nodo
 def loopescritura(Data):
-    
     for asiento in Data:
         print(asiento.ident +" "+ asiento.estado +" "+ asiento.posicion)
     
